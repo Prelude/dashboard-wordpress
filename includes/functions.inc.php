@@ -5,7 +5,6 @@
  * L'ensemble des fonctions nécessaires à PWD
  *
  * @author Jean-François RENAULD - http://www.prelude-prod.fr/
- * @version 1.0.0
  * @package PWD
  * @subpackage includes
  */
@@ -369,4 +368,21 @@ function viewDate($dateGMT = '') {
 		$date = $jour.'/'.$mois.'/'.$annee;
 	}
 	return $date;
+}
+
+/**
+ * Fonction user de tri par rapport à la valeur 'use'
+ * @param string $value1
+ * @param string $value2
+ */
+function sortByUse($value1 = '', $value2 = '') {
+	if($value1['use'] < $value2['use']) {
+		return 1;
+		
+	} else if($value1['use'] > $value2['use']) {
+		return -1;
+		
+	} else {
+		return 0;
+	}
 }

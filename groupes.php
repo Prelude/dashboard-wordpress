@@ -5,7 +5,6 @@
  * Visualisatino des sites classés par groupe
  *
  * @author Jean-François RENAULD - http://www.prelude-prod.fr/
- * @version 1.0.0
  * @package PWD
  */
 include 'config.inc.php';

@@ -34,3 +34,9 @@ $(function() {
         element.addClass('active');
     }
 });
+
+$('.tooltips').tooltip({
+    selector: "[data-toggle=tooltip]",
+    container: "body",
+    html: true
+});

@@ -5,7 +5,6 @@
  * Fichier de configuration
  * 
  * @author Jean-François RENAULD - http://www.prelude-prod.fr/
- * @version 1.0.0
  * @package PWD
  */
 define('gBASE_PATH', 'base/');					// dossier de la base de données

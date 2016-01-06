@@ -2,7 +2,7 @@
 /**
  * Prelude WordPress Dashboard (PWD) est un tableau de bord permettant de gérer plusieurs sites sous WordPress.
  *
- * Affichage des informations concernant un plugin
+ * Affichage des informations concernant un plugin dans une liste
  *
  * @author Jean-François RENAULD - http://www.prelude-prod.fr/
  * @package PWD
@@ -29,8 +29,8 @@ $lastUpdate = viewDate($ePlugin['infos']['last_updated']);
 	                    <div class="panel panel-'.$color.'">
 	                        <div class="panel-heading">
 	                            <div class="row">
-	                                <div class="col-xs-1">
-	                                    <i class="fa fa-puzzle-piece fa-2x"></i>
+	                    			<div class="col-xs-2 text-right huge tooltips">
+	                                    <span data-placement="bottom" data-toggle="tooltip" data-original-title="'.$ePlugin['blogs'].'">'.$ePlugin['use'].'x</span>
 	                                </div>
 	                                <div class="col-xs-10 text-right">
 	                                    <div><strong>'.$ePlugin['version'].'</strong></div>

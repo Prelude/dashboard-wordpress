@@ -5,7 +5,6 @@
  * Index du tableau de bord - Visualisation de l'ensemble des sites
  *
  * @author Jean-François RENAULD - http://www.prelude-prod.fr/
- * @version 1.0.0
  * @package PWD
  */
 include 'config.inc.php';

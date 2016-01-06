@@ -5,7 +5,6 @@
  * Ajout et modification d'un site
  *
  * @author Jean-François RENAULD - http://www.prelude-prod.fr/
- * @version 1.0.0
  * @package PWD
  */
 include 'config.inc.php'; 
@@ -165,13 +164,13 @@ include 'includes/navigation.inc.php';
 								
 								<div class="col-lg-6">
 									<div class="form-group">
-										<label>Plugin Prélude Version - URL</label>
+										<label>Extension Prélude Version - URL</label>
 										<input class="form-control" name="version-url" value="<?php echo $eSite['version_url']; ?>">
-										<p class="help-block">L'URL indiquée dans les paramètres du plugin "Prélude Version" ou vide si le plugin n'est pas installé.</p>
+										<p class="help-block">L'URL indiquée dans les paramètres de l'extension "Prélude Version" ou vide si l'extension n'est pas installée.</p>
 										
-										<label>Plugin Prélude Version - Mot de passe</label>
+										<label>Extension Prélude Version - Mot de passe</label>
 										<input class="form-control" name="version-pass" value="<?php echo $eSite['version_pass']; ?>">
-										<p class="help-block">Le mot de passe indiquée dans les paramètres du plugin "Prélude Version" ou vide si le plugin n'est pas installé.</p>
+										<p class="help-block">Le mot de passe indiquée dans les paramètres de l'extension "Prélude Version" ou vide si l'extension n'est pas installée.</p>
 										
 										<?php if($idSite != '') { 	// modification ?>
 										<button type="submit" class="btn btn-success btn-lg btn-block">Modifier ce blog</button>

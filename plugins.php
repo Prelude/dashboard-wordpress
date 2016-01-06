@@ -5,7 +5,6 @@
  * Visualisation des plugins pour un site donné
  *
  * @author Jean-François RENAULD - http://www.prelude-prod.fr/
- * @version 1.0.0
  * @package PWD
  */
 include 'config.inc.php';
@@ -42,7 +41,7 @@ include 'includes/navigation.inc.php';
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="page-header"><?php echo $blog['name']; ?> - Plugins</h1>
+					<h1 class="page-header"><?php echo $blog['name']; ?> - Extensions</h1>
 				</div>
 				<!-- /.col-lg-12 -->
 			</div>

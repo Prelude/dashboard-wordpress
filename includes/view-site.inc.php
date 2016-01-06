@@ -5,7 +5,6 @@
  * Affichage des informations concernant un blog
  *
  * @author Jean-François RENAULD - http://www.prelude-prod.fr/
- * @version 1.0.0
  * @package PWD
  * @subpackage includes
  */
@@ -16,6 +15,7 @@ if($eBlog['version_url'] != '-') {
 	$blogInfos = getInfoBlog($eBlog['url'], $eBlog['version_url'], $eBlog['version_pass']);
 	if($blogInfos != FALSE) {
 		$version = $blogInfos['version'];
+		$nbrPlugins = count($blogInfos['plugins']['plugin']);
 		foreach($blogInfos['plugins']['plugin'] as $keyPlugins => $ePlugin) {
 			$pluginsInfos = getPluginVersion($ePlugin['slug']);
 			if($pluginsInfos != null) {
@@ -29,6 +29,7 @@ if($eBlog['version_url'] != '-') {
 		
 } else {
 	$preludeVersion = FALSE;
+	$nbrPlugins = '?';
 }
 
 
@@ -54,10 +55,10 @@ if($preludeVersion === FALSE) {
 }
 
 if($pluginUpdate === TRUE) {
-	$pluginText = '<span class="pluginUpdate">Plugins <span class="fa fa-warning"></span></span>';
+	$pluginText = '<span class="pluginUpdate">Extensions ('.$nbrPlugins.') <span class="fa fa-warning"></span></span>';
 		
 } else {
-	$pluginText = 'Plugins';
+	$pluginText = 'Extension ('.$nbrPlugins.')';
 }
 if($gViewHuge === TRUE) {
 	$html .= '<div class="col-lg-3 col-md-6">

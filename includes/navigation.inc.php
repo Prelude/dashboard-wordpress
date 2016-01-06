@@ -19,6 +19,9 @@
 					<a href="groupes.php"><i class="fa fa-group fa-fw"></i> Groupes</a>
 				</li>
 				<li>
+					<a href="liste-plugins.php"><i class="fa fa-puzzle-piece fa-fw"></i> Liste des extensions</a>
+				</li>
+				<li>
 					<a href="add.php"><i class="fa fa-plus fa-fw"></i> Ajouter un blog</a>
 				</li>
 			</ul>
