@@ -13,16 +13,16 @@ $metaTitle = 'PWD - Plugins';
 
 $id = getRequest('id');
 if(is_numeric($id) === FALSE) {
-	redirectInterne('/');
+	redirectInterne('./');
 }
 
 if(isset($gSettings['sites']['site'][$id]) === FALSE) {
-	redirectInterne('/');
+	redirectInterne('./');
 }
 
 $blog = $gSettings['sites']['site'][$id];
 if($blog['version_url'] == '-') {
-	redirectInterne('/');
+	redirectInterne('./');
 }
 
 $blogInfos = getInfoBlog($blog['url'], $blog['version_url'], $blog['version_pass']);

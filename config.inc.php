@@ -7,6 +7,8 @@
  * @author Jean-François RENAULD - http://www.prelude-prod.fr/
  * @package PWD
  */
+define('gVERSION', '1.0.2');		// la version de PWD
+
 define('gBASE_PATH', 'base/');					// dossier de la base de données
 define('gBASE_NAME', 'ma-base-au-complet.xml');		// nom du fichier de la base de données
 
@@ -35,6 +37,28 @@ if(count($gSettings['sites']['site']) > 12)  {
 } else {
 	$gViewHuge = TRUE;
 }
+
+/*
+ * la palette de couleurs utilisées pour les groupes
+ */
+$gPaletteColors = array(
+		0	=>	'BlueViolet',
+		1	=>	'Chocolate',
+		2	=>	'ForestGreen',
+		3	=>	'CadetBlue',
+		4	=>	'DarkOliveGreen',
+		5	=>	'Feldspar',
+		6	=>	'Brown',
+		7	=>	'LimeGreen',
+		8	=>	'Teal',
+		9	=>	'SeaGreen',
+		10	=>	'YellowGreen',
+		11	=>	'MediumSlateBlue',
+		12	=>	'OliveDrab',
+		13	=>	'Orange',
+		14	=>	'Orchid'		
+);
+
 
 $gWordpress = getWordPressVersion();
 $versionMaster = $gWordpress['offers'][0]['version'];

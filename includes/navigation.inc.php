@@ -7,13 +7,13 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="index.html">PWD v1.0</a>
+		<a class="navbar-brand" href="index.html">PWD v<?php echo gVERSION; ?></a>
 	</div>
 	<div class="navbar-default sidebar" role="navigation">
 		<div class="sidebar-nav navbar-collapse">
 			<ul class="nav" id="side-menu">
 				<li>
-					<a href="/"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+					<a href="./"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
 				</li>
 				<li>
 					<a href="groupes.php"><i class="fa fa-group fa-fw"></i> Groupes</a>

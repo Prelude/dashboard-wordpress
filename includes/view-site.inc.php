@@ -61,8 +61,14 @@ if($pluginUpdate === TRUE) {
 	$pluginText = 'Extension ('.$nbrPlugins.')';
 }
 if($gViewHuge === TRUE) {
-	$html .= '<div class="col-lg-3 col-md-6">
-	                    <div class="panel panel-'.$color.'">
+	$html .= '<div class="col-lg-3 col-md-6">';
+if($groupeView != '') {
+		$html .= '<div class="title-groupe"><h3 style="color:'.$groupeColor.'">'.$groupeView.'</h3></div>';
+	}
+	if($groupeColor != '') {
+		$html .= '<div class="barre-color" style="background-color:'.$groupeColor.'"></div>';
+	}
+	$html .= '	<div class="panel panel-'.$color.'">
 	                        <div class="panel-heading">
 	                            <div class="row">
 	                                <div class="col-xs-2">
@@ -102,8 +108,14 @@ if($gViewHuge === TRUE) {
 					</div>';
 
 } else {
-	$html .= '<div class="col-lg-2 col-md-4">
-	                    <div class="panel panel-'.$color.'">
+	$html .= '<div class="col-lg-2 col-md-4">';
+	if($groupeView != '') {
+		$html .= '<div class="title-groupe"><h3 style="color:'.$groupeColor.'">'.$groupeView.'</h3></div>';
+	}
+	if($groupeColor != '') {
+		$html .= '<div class="barre-color" style="background-color:'.$groupeColor.'"></div>';
+	}
+	$html .= '	<div class="panel panel-'.$color.'">
 	                        <div class="panel-heading">
 	                            <div class="row">
 	                                <div class="col-xs-1">

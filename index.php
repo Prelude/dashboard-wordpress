@@ -26,10 +26,22 @@ include 'includes/navigation.inc.php';
 			<div class="row">
             <?php
 $html = '';
+$colorIndex = 0;
+foreach($gSettings['options']['groupes']['groupe'] as $keyGroupe => $eGroupe) {
+	//$html .= '<div class="col-lg-12"><h2>'.$eGroupe['name'].'</h2></div>';
+	//$html .= '<div class="col-lg-1 col-md-1"><h3>'.$eGroupe['name'].'</h3></div>';
+	$groupeView = $eGroupe['name'];
+	$groupeColor = $gPaletteColors[$colorIndex];
 	foreach($gSettings['sites']['site'] as $key => $eBlog) {
-		include 'includes/view-site.inc.php';	
+		if($eBlog['groupe'] != $eGroupe['id']) {
+			continue;
+		}
+		include 'includes/view-site.inc.php';
+		$groupeView = '';
 	}
-	echo $html;
+	$colorIndex++;
+}
+echo $html;
 
 if($gSettings['sites']['site'] < 1) {		// si pas encore de blog
 			?>                

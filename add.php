@@ -26,7 +26,7 @@ $eSite = array(
 );
 if($idSite != '') {
 	if(isset($gSettings['sites']['site'][$idSite]) === FALSE) {
-		redirectInterne('/');
+		redirectInterne('./');
 		
 	} else {
 		$eSite = $gSettings['sites']['site'][$idSite];
@@ -87,7 +87,7 @@ if($action == 'ok') {
 		}
 		saveSettings($gSettings);
 		cacheDel(md5($url));
-		redirectInterne('/');
+		redirectInterne('./');
 	}	
 }
 if($eSite['version_url'] == '-') {

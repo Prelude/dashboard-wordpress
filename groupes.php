@@ -26,6 +26,8 @@ include 'includes/navigation.inc.php';
 			<div class="row">
             <?php
 $html = '';
+$groupeView = '';
+$groupeColor = '';
 foreach($gSettings['options']['groupes']['groupe'] as $keyGroupe => $eGroupe) {
 	$html .= '<div class="col-lg-12"><h2>'.$eGroupe['name'].'</h2></div>';
 	foreach($gSettings['sites']['site'] as $key => $eBlog) {

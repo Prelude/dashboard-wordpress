@@ -387,3 +387,24 @@ table.dataTable thead .sorting:after {
 	color:#d9534f;
 	font-weight:bold;
 }
+
+.title-groupe {
+	position:absolute;
+	top:-1.25em;
+	left:1em;
+	z-index:2;
+}
+
+.title-groupe h3 {
+	padding:0;
+	margin:0;
+	font-size:1.25em;
+}
+.barre-color {
+	position:relative;
+	top:-1px;
+	left:0;
+	height:4px;
+	overflow:hidden;
+	z-index:5;
+}
