@@ -1,5 +1,5 @@
 <a name="1.0.2"></a>
-## [0.5.3](https://github.com/ajoslin/conventional-changelog/compare/v0.5.2...v0.5.3) (2015-12-25)
+## [1.0.2] (2016-01-11)
 
 
 ### Bug Fixes
