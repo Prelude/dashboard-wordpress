@@ -246,6 +246,98 @@ function getInfoBlog($url = '', $versionUrl = '', $versionPass = '') {
 	return $array;
 }
 
+
+
+
+/**
+ * Charge la liste des plugins de façon asynchron
+ */
+function getPluginVersionAsynchron() {
+	global $gSettings;
+	
+	// création de la liste des slugs
+	$listePlugins = array();
+	foreach($gSettings['sites']['site'] as $key => $eBlog) {
+		if($eBlog['version_url'] == '-') {
+			continue;
+		}
+		$blogInfos = getInfoBlog($eBlog['url'], $eBlog['version_url'], $eBlog['version_pass']);
+		$plugins = array();
+		foreach($blogInfos['plugins']['plugin'] as $key => $ePlugin) {
+			if(isset($listePlugins[$ePlugin['slug']]) === FALSE) {
+				$pos = strpos($ePlugin['slug'], '/');
+				$slug = substr($ePlugin['slug'], 0, $pos);
+					
+				if($slug != '') {
+					$listePlugins[$slug] = $slug;
+				}
+			}
+		}
+	}
+	
+	// chargement des infos
+	$urlAPI = array();
+	foreach($listePlugins as $key => $eSlug) {
+		if(cacheState($eSlug, gCACHE_TIME_PLUGINS) === FALSE) {
+			$urlAPI[$eSlug] = gWORDPRESS_API_PLUGIN.$eSlug.'.json';
+		}
+	}
+	
+	$result = multiCurlAsynchrone($urlAPI);
+	
+	foreach($result as $slug => $eResult) {
+		$infos = json_decode($eResult['content'], TRUE);
+		cacheSet($slug, $infos);
+	}	
+}
+
+/**
+ * Chargement asynchrone d'une série d'URLs
+ * @param array $data
+ */
+function multiCurlAsynchrone($data) {
+	$curly = array();
+	
+	$result = array();
+	
+	// multi handle
+	$mh = curl_multi_init();
+
+	// création des demandes
+	foreach($data as $id => $url) {
+		$curly[$id] = curl_init();
+		
+		curl_setopt($curly[$id], CURLOPT_URL, $url);
+		curl_setopt($curly[$id], CURLOPT_TIMEOUT, 30);
+		curl_setopt($curly[$id], CURLOPT_HEADER, 0);
+		curl_setopt($curly[$id], CURLOPT_RETURNTRANSFER, 1);
+
+		curl_multi_add_handle($mh, $curly[$id]);
+	}
+
+	// Éxécution des handles
+	$running = 9;
+	while($running > 0){
+		curl_multi_exec($mh, $running);
+		curl_multi_select($mh);
+	}
+
+	// Récupération des résultats et fermeture des handles
+	foreach($curly as $id => $ch) {
+		$content = curl_multi_getcontent($ch);
+		$info = curl_getinfo($ch);
+		$result[$id]['content'] = $content;
+		$result[$id]['info'] = $info;
+		curl_multi_remove_handle($mh, $ch);
+	}
+
+	// on ferme tout
+	curl_multi_close($mh);
+	
+	return $result;
+}
+
+
 /**
  * Renvoie la dernière version d'un plugin en fonction de son "slug"
  * @param string $slugUrl
@@ -306,7 +398,7 @@ function cacheSetFilename($file = '') {
  */
 function cacheState($file = '', $time = gCACHE_TIME_DEFAULT) {
 	$filename = cacheSetFilename($file);
-	$timeMax = $time + (mt_rand(0, 3600) - 1800);
+	$timeMax = $time;	// + (mt_rand(0, 3600) - 1800);
 	if(file_exists($filename) === TRUE and filemtime($filename) > time() - $timeMax) {
 		return TRUE;
 	}

@@ -9,6 +9,9 @@
  */
 include 'config.inc.php';
 
+// mise à jour des plugins
+getPluginVersionAsynchron();
+
 $metaTitle = 'Prélude WordPress Dashboard (PWD)';
 
 include 'includes/header.inc.php';

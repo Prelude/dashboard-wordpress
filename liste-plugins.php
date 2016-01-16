@@ -11,6 +11,9 @@ include 'config.inc.php';
 
 $metaTitle = 'PWD - Liste plugins';
 
+// mise à jour des plugins
+getPluginVersionAsynchron();
+
 $listePlugins = array();
 foreach($gSettings['sites']['site'] as $key => $eBlog) {
 	if($eBlog['version_url'] == '-') {

@@ -9,6 +9,9 @@
  */
 include 'config.inc.php';
 
+// mise à jour des plugins
+getPluginVersionAsynchron();
+
 $metaTitle = 'PWD - Groupes';
 
 include 'includes/header.inc.php';

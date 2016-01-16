@@ -1,10 +1,20 @@
+<a name="1.1.0"></a>
+## [1.1.0] (2016-01-16)
+
+
+### Features
+
+* Chargement de la liste des extensions en version asynchron afin d'augmenter la vitesse de mise à jour lorsque l'on a beaucoup d'extensions
+
+
+
 <a name="1.0.2"></a>
-## [1.0.2] (2016-01-11)
+## [1.0.2](https://github.com/Prelude/dashboard-worpress/commit/b80af01beed883ea91d62b91051bfe19b6f5d29c) (2016-01-06)
 
 
 ### Bug Fixes
 
-* Mauvais retour à la home page lorsque le site est installé dans un sous dossier.
+* Mauvais retour à la home page lorsque le site est installé dans un sous dossier
 
 ### Features
 
@@ -19,7 +29,7 @@
 
 ### Features
 
-* Ajout de la page regrouppant l'ensemble des extensions utilisées sur les sites.
+* Ajout de la page regrouppant l'ensemble des extensions utilisées sur les sites
 
 
 

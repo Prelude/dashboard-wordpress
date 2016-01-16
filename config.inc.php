@@ -7,7 +7,7 @@
  * @author Jean-François RENAULD - http://www.prelude-prod.fr/
  * @package PWD
  */
-define('gVERSION', '1.0.2');		// la version de PWD
+define('gVERSION', '1.1.0');		// la version de PWD
 
 define('gBASE_PATH', 'base/');					// dossier de la base de données
 define('gBASE_NAME', 'ma-base-au-complet.xml');		// nom du fichier de la base de données
