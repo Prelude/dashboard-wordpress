@@ -1,5 +1,5 @@
 <a name="1.1.0"></a>
-## [1.1.0] (2016-01-16)
+## [1.1.0](https://github.com/Prelude/dashboard-worpress)(2016-01-16)
 
 
 ### Features
