@@ -5,6 +5,7 @@ Fonctionne avec l'extension WordPress "Prélude Version" : https://wordpress.org
 
 Plus d'informations : http://www.prelude-prod.fr/project/extension-wordpress-prelude-version/
 
-Sur GitHub : https://github.com/Prelude/dashboard-worpress
+Sur GitHub : https://github.com/Prelude/dashboard-wordpress
 
 
+![alt tag](http://www.prelude-prod.fr/wp-content/uploads/2015/12/blog-1.png)
