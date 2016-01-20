@@ -1,5 +1,5 @@
 <a name="1.1.0"></a>
-## [1.1.0](https://github.com/Prelude/dashboard-worpress)(2016-01-16)
+## [1.1.0](https://github.com/Prelude/dashboard-wordpress)(2016-01-16)
 
 
 ### Features
@@ -9,7 +9,7 @@
 
 
 <a name="1.0.2"></a>
-## [1.0.2](https://github.com/Prelude/dashboard-worpress/commit/b80af01beed883ea91d62b91051bfe19b6f5d29c) (2016-01-06)
+## [1.0.2](https://github.com/Prelude/dashboard-wordpress/commit/b80af01beed883ea91d62b91051bfe19b6f5d29c) (2016-01-06)
 
 
 ### Bug Fixes
@@ -24,7 +24,7 @@
 
 
 <a name="1.0.1"></a>
-## [1.0.1](https://github.com/Prelude/dashboard-worpress/commit/d22c0f4f07ebb48525db227168e86099155d18dc) (2016-01-06)
+## [1.0.1](https://github.com/Prelude/dashboard-wordpress/commit/d22c0f4f07ebb48525db227168e86099155d18dc) (2016-01-06)
 
 
 ### Features
