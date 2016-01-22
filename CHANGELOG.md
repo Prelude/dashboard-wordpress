@@ -1,5 +1,15 @@
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/Prelude/dashboard-wordpress)(2016-01-22)
+
+
+### Features
+
+* Chargement de la liste des sites en version asynchron afin d'augmenter la vitesse de mise à jour lorsque l'on a beaucoup de sites
+
+
+
 <a name="1.1.0"></a>
-## [1.1.0](https://github.com/Prelude/dashboard-wordpress)(2016-01-16)
+## [1.1.0](https://github.com/Prelude/dashboard-wordpress/commit/32ac491a7049b83b8f032a1db9bbef6b91fb68ba)(2016-01-16)
 
 
 ### Features

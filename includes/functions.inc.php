@@ -246,14 +246,51 @@ function getInfoBlog($url = '', $versionUrl = '', $versionPass = '') {
 	return $array;
 }
 
-
-
+/**
+ * Charge la liste des sites en asynchron
+ */
+function getWordPressAsynchron() {
+	global $gSettings;
+	$listeSites = array();
+	$listeMD5 = array();
+	foreach($gSettings['sites']['site'] as $key => $eBlog) {
+		if($eBlog['version_url'] == '-') {
+			continue;
+		}
+		$fichier = $eBlog['url'];
+		$versionUrl = $eBlog['version_url'];
+		$versionPass = $eBlog['version_pass'];
+		$md5url = md5($eBlog['url']);
+		if($fichier[strlen($eBlog['url']) - 1] == '/') {
+			$fichier .= '?feed='.$versionUrl.'&pass='.$versionPass;
+		
+		} else {
+			$fichier .= '/?feed='.$versionUrl.'&pass='.$versionPass;
+		}
+		if(cacheState($md5url, gCACHE_TIME_VERSION) === FALSE) {
+			$listeSites[$key] = $fichier;
+			$listeMD5[$key] = $md5url; 
+		}
+	}
+	
+	$result = multiCurlAsynchrone($listeSites);
+	
+	foreach($result as $key => $eResult) {
+		$xml = simplexml_load_string($eResult['content']);
+		$array = json_decode(json_encode((array)$xml), TRUE);
+		cacheSet($listeMD5[$key], $array);
+	}
+	
+}
 
 /**
- * Charge la liste des plugins de façon asynchron
+ * Charge la liste des sites et des plugins de façon asynchron
  */
 function getPluginVersionAsynchron() {
 	global $gSettings;
+	
+	// création de la liste des sites
+	getWordPressAsynchron();
 	
 	// création de la liste des slugs
 	$listePlugins = array();
