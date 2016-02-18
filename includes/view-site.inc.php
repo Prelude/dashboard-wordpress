@@ -11,10 +11,17 @@
 $version = '?';
 $pluginUpdate = FALSE;
 $preludeVersion = TRUE;
+$themeName = '-';
+$themeVersion = '-';
+
 if($eBlog['version_url'] != '-') {
 	$blogInfos = getInfoBlog($eBlog['url'], $eBlog['version_url'], $eBlog['version_pass']);
 	if($blogInfos != FALSE) {
 		$version = $blogInfos['version'];
+		if(isset($blogInfos['theme']['name']) === TRUE) {
+			$themeName = $blogInfos['theme']['name'];
+			$themeVersion = $blogInfos['theme']['version'];
+		}
 		$nbrPlugins = count($blogInfos['plugins']['plugin']);
 		foreach($blogInfos['plugins']['plugin'] as $keyPlugins => $ePlugin) {
 			$pluginsInfos = getPluginVersion($ePlugin['slug']);
@@ -75,7 +82,7 @@ if($groupeView != '') {
 	                                    <i class="fa fa-wordpress fa-2x"></i>
 	                                </div>
 	                                <div class="col-xs-10 text-right">
-	                                    <div class="huge">'.$version.'</div>
+	                                    <div class="huge"><a href="reset-site.php?id='.$key.'" title="Revérifier ce site">'.$version.'</strong></a></div>
 	                                    <div>'.$eBlog['name'].'
 	    								<a href="add.php?id='.$key.'" class="btn btn-'.$colorLink.' btn-circle btn-mini" type="button">
 												<i class="fa fa-pencil"></i>
@@ -89,15 +96,25 @@ if($groupeView != '') {
 									<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 									<div class="clearfix"></div>
 								</div>
-							</a>
-							<a href="plugins.php?id='.$key.'" target="_blank">
+							</a>';
+	if($preludeVersion === TRUE) {
+		$html .= '<a href="plugins.php?id='.$key.'">
 								<div class="panel-footer">
-									<span class="pull-left">'.$pluginText.'</span>
+									<span class="pull-left little">'.$pluginText.'</span>
 									<span class="pull-right"><i class="fa fa-puzzle-piece"></i></span>
 									<div class="clearfix"></div>
 								</div>
-							</a>
-							<a href="'.$urlAdmin.'" target="_blank">
+							</a>';
+	} else {
+		$html .= '<div>
+								<div class="panel-footer">
+									<span class="pull-left little">'.$pluginText.'</span>
+									<span class="pull-right"><i class="fa fa-puzzle-piece"></i></span>
+									<div class="clearfix"></div>
+								</div>
+							</div>';
+	}
+		$html .= '<a href="'.$urlAdmin.'" target="_blank">
 								<div class="panel-footer">
 									<span class="pull-left">Administration</span>
 									<span class="pull-right"><i class="fa fa-dashboard"></i></span>

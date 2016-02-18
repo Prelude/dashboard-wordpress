@@ -1,5 +1,15 @@
+<a name="1.2.0"></a>
+## [1.2.0](https://github.com/Prelude/dashboard-wordpress)(2016-02-18)
+
+
+### Features
+
+* Ajout de la liste des thèmes utilisés et de leur version
+* Corrections de bugs lorsque le dashboard ne contient pas beaucoup de sites (lien vers les extensions, lien de mise à jour forcée)
+
+
 <a name="1.1.1"></a>
-## [1.1.1](https://github.com/Prelude/dashboard-wordpress)(2016-01-22)
+## [1.1.1](https://github.com/Prelude/dashboard-wordpress/commit/7a38b2fc01b88c0210882adce9adbd1dbac2bd59)(2016-01-22)
 
 
 ### Features

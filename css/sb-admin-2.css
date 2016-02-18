@@ -408,3 +408,8 @@ table.dataTable thead .sorting:after {
 	overflow:hidden;
 	z-index:5;
 }
+
+.fa.mini-link {
+	font-size:0.75em;
+	color:#666;
+}

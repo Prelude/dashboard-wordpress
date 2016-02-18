@@ -22,7 +22,13 @@
 					<a href="liste-plugins.php"><i class="fa fa-puzzle-piece fa-fw"></i> Liste des extensions</a>
 				</li>
 				<li>
+					<a href="liste-themes.php"><i class="fa fa-desktop fa-fw"></i> Liste des thèmes</a>
+				</li>
+				<li>
 					<a href="add.php"><i class="fa fa-plus fa-fw"></i> Ajouter un blog</a>
+				</li>
+				<li>
+					<a href="http://www.prelude-prod.fr/"><i class="fa fa-info-circle fa-fw"></i>Prélude Prod <span class="fa fa-sign-out mini-link"></span></a>
 				</li>
 			</ul>
 		</div>
