@@ -1,5 +1,14 @@
+<a name="1.2.1"></a>
+## [1.2.1](https://github.com/Prelude/dashboard-wordpress)(2016-02-22)
+
+
+### Bug Fixes
+
+* Ajout de l'agent lors de la lecture de l'url
+
+
 <a name="1.2.0"></a>
-## [1.2.0](https://github.com/Prelude/dashboard-wordpress)(2016-02-18)
+## [1.2.0](https://github.com/Prelude/dashboard-wordpress/commit/85e77b6d619e67e4aa29e84d3475882e27255fb6)(2016-02-18)
 
 
 ### Features

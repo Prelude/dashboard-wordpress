@@ -260,6 +260,7 @@ function getWordPressAsynchron() {
 		$fichier = $eBlog['url'];
 		$versionUrl = $eBlog['version_url'];
 		$versionPass = $eBlog['version_pass'];
+		
 		$md5url = md5($eBlog['url']);
 		if($fichier[strlen($eBlog['url']) - 1] == '/') {
 			$fichier .= '?feed='.$versionUrl.'&pass='.$versionPass;
@@ -274,7 +275,7 @@ function getWordPressAsynchron() {
 	}
 	
 	$result = multiCurlAsynchrone($listeSites);
-	
+		
 	foreach($result as $key => $eResult) {
 		$xml = simplexml_load_string($eResult['content']);
 		$array = json_decode(json_encode((array)$xml), TRUE);
@@ -343,7 +344,8 @@ function multiCurlAsynchrone($data) {
 	// création des demandes
 	foreach($data as $id => $url) {
 		$curly[$id] = curl_init();
-		
+		$agent = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)';
+		curl_setopt($curly[$id], CURLOPT_USERAGENT, $agent);
 		curl_setopt($curly[$id], CURLOPT_URL, $url);
 		curl_setopt($curly[$id], CURLOPT_TIMEOUT, 30);
 		curl_setopt($curly[$id], CURLOPT_HEADER, 0);

@@ -30,6 +30,9 @@
 				<li>
 					<a href="http://www.prelude-prod.fr/"><i class="fa fa-info-circle fa-fw"></i>Prélude Prod <span class="fa fa-sign-out mini-link"></span></a>
 				</li>
+				<li>
+					<a href="https://github.com/Prelude/dashboard-wordpress"><i class="fa fa-info-circle fa-fw"></i>PWD sur GitHub <span class="fa fa-sign-out mini-link"></span></a>
+				</li>
 			</ul>
 		</div>
 		<!-- /.sidebar-collapse -->
