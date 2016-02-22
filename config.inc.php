@@ -12,7 +12,7 @@ define('gVERSION', '1.2.1');		// la version de PWD
 define('gBASE_PATH', 'base/');					// dossier de la base de données
 define('gBASE_NAME', 'ma-base-au-complet.xml');		// nom du fichier de la base de données
 
-define('gWORDPRESS_API_CORE', 'https://api.wordpress.org/core/version-check/1.7/');	// WordPress Version Checker
+define('gWORDPRESS_API_CORE', 'http://api.wordpress.org/core/version-check/1.7/');	// WordPress Version Checker
 define('gWORDPRESS_API_PLUGIN', 'http://api.wordpress.org/plugins/info/1.0/');	// url de l'API plugin Wordpress
 
 define('gCACHE_PATH', 'cache/');				// dossier du cache
