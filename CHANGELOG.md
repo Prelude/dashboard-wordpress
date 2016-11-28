@@ -1,5 +1,14 @@
+<a name="1.2.2"></a>
+## [1.2.2](https://github.com/Prelude/dashboard-wordpress/)(2016-11-28)
+
+
+### Bug Fixes
+
+* Ne pas afficher les erreurs lorsqu'un site n'est plus accessible
+
+
 <a name="1.2.1"></a>
-## [1.2.1](https://github.com/Prelude/dashboard-wordpress)(2016-02-22)
+## [1.2.1](https://github.com/Prelude/dashboard-wordpress/commit/4366d1d83ce6a7bd522538e3f6c2e042e824b7e0)(2016-02-22)
 
 
 ### Bug Fixes

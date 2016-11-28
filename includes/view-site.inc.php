@@ -17,7 +17,12 @@ $themeVersion = '-';
 if($eBlog['version_url'] != '-') {
 	$blogInfos = getInfoBlog($eBlog['url'], $eBlog['version_url'], $eBlog['version_pass']);
 	if($blogInfos != FALSE) {
-		$version = $blogInfos['version'];
+		if(isset($blogInfos['version']) === TRUE) {
+			$version = $blogInfos['version'];
+			
+		} else {
+			$version = '???';
+		}
 		if(isset($blogInfos['theme']['name']) === TRUE) {
 			$themeName = $blogInfos['theme']['name'];
 			$themeVersion = $blogInfos['theme']['version'];

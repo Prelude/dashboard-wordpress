@@ -1,4 +1,4 @@
-# dashboard-wordpress v1.2.1
+# dashboard-wordpress v1.2.2
 Un tableau de bord pour avoir une vue globale des versions de plusieurs blogs sous WordPress et des extensions installées.
 
 Fonctionne avec l'extension WordPress "Prélude Version" : https://wordpress.org/plugins/prelude-version/

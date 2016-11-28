@@ -225,9 +225,12 @@ function getInfoBlog($url = '', $versionUrl = '', $versionPass = '') {
 	}
 	$md5url = md5($url);
 	if(cacheState($md5url, gCACHE_TIME_VERSION) === FALSE) {
-		$xml = simplexml_load_file($fichier);
+		$xml = @simplexml_load_file($fichier);
 		$array = json_decode(json_encode((array)$xml), TRUE);
 		cacheSet($md5url, $array);
+		if($xml === FALSE) {
+			return FALSE;
+		}
 		
 	} else {
 		$array = cacheGet($md5url); 
@@ -277,6 +280,12 @@ function getWordPressAsynchron() {
 	$result = multiCurlAsynchrone($listeSites);
 		
 	foreach($result as $key => $eResult) {
+		if(isset($eResult['http_code']) === FALSE) {
+			continue;
+		}
+		if($eResult['http_code'] != 200) {
+			continue;
+		}
 		$xml = simplexml_load_string($eResult['content']);
 		$array = json_decode(json_encode((array)$xml), TRUE);
 		cacheSet($listeMD5[$key], $array);
@@ -301,6 +310,9 @@ function getPluginVersionAsynchron() {
 		}
 		$blogInfos = getInfoBlog($eBlog['url'], $eBlog['version_url'], $eBlog['version_pass']);
 		$plugins = array();
+		if(isset($blogInfos['plugins']['plugin']) === FALSE) {
+			continue;
+		}
 		foreach($blogInfos['plugins']['plugin'] as $key => $ePlugin) {
 			if(isset($listePlugins[$ePlugin['slug']]) === FALSE) {
 				$pos = strpos($ePlugin['slug'], '/');
